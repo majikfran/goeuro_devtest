@@ -4,7 +4,7 @@ import java.util.List;
 
 import me.fcbwilliams.goeuro.devtest.Spring.TestSpringConfiguration;
 import me.fcbwilliams.goeuro.domain.interfaces.objects.ICity;
-import me.fcbwilliams.goeuro.repositories.interfaces.IEndpoint;
+import me.fcbwilliams.goeuro.endpoints.interfaces.IEndpoint;
 
 import org.junit.Assert;
 import org.junit.Test;

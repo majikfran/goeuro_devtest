@@ -1,4 +1,4 @@
-package me.fcbwilliams.goeuro.repositories.interfaces;
+package me.fcbwilliams.goeuro.endpoints.interfaces;
 
 import java.util.List;
 

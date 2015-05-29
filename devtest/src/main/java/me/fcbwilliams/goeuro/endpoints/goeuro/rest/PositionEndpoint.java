@@ -1,4 +1,4 @@
-package me.fcbwilliams.goeuro.repositories.goeuro.rest;
+package me.fcbwilliams.goeuro.endpoints.goeuro.rest;
 
 import java.nio.charset.Charset;
 import java.util.List;
@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 
 import me.fcbwilliams.goeuro.domain.goeuro.objects.City;
 import me.fcbwilliams.goeuro.domain.interfaces.objects.ICity;
-import me.fcbwilliams.goeuro.repositories.interfaces.IEndpoint;
+import me.fcbwilliams.goeuro.endpoints.interfaces.IEndpoint;
 
 @Component
 public class PositionEndpoint implements IEndpoint<ICity>{

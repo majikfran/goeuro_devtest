@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.fcbwilliams.goeuro.domain.interfaces.objects.ICity;
-import me.fcbwilliams.goeuro.repositories.goeuro.rest.PositionEndpoint;
-import me.fcbwilliams.goeuro.repositories.interfaces.IEndpoint;
+import me.fcbwilliams.goeuro.endpoints.goeuro.rest.PositionEndpoint;
+import me.fcbwilliams.goeuro.endpoints.interfaces.IEndpoint;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

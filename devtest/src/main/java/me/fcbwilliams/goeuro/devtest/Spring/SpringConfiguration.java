@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 import me.fcbwilliams.goeuro.domain.interfaces.objects.*;
-import me.fcbwilliams.goeuro.repositories.goeuro.rest.PositionEndpoint;
-import me.fcbwilliams.goeuro.repositories.interfaces.IEndpoint;
+import me.fcbwilliams.goeuro.endpoints.goeuro.rest.PositionEndpoint;
+import me.fcbwilliams.goeuro.endpoints.interfaces.IEndpoint;
 
 
 @Configuration
