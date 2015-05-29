@@ -1,6 +1,6 @@
 package me.fcbwilliams.goeuro.domain.goeuro.objects;
 
-import me.fcbwilliams.goeuro.domain.Interfaces.objects.ICity;
+import me.fcbwilliams.goeuro.domain.interfaces.objects.ICity;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
