@@ -27,7 +27,7 @@ public class TestSpringConfiguration {
 	private String apiVersionPath;
 	
 	@Bean
-	public IRestEndpoint<IPosition> cityRepository()
+	public IRestEndpoint<IPosition> positionEndpoint()
 	{
 		return new PositionEndpoint(apiBasePath, apiVersionPath);
 	}

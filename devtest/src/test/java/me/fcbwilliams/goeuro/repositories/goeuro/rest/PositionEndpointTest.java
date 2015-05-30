@@ -15,15 +15,15 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = TestSpringConfiguration.class)
-public class CityRepositoryTest {
+public class PositionEndpointTest {
 	
 	@Autowired
-	IRestEndpoint<IPosition> cityRepository;
+	IRestEndpoint<IPosition> positionEndpoint;
 	
 	@Test
-	public void getByNameTest()
+	public void getDataTest()
 	{
-		List<? extends IPosition> cities = cityRepository.getSuggestions("Berlin");
+		List<? extends IPosition> cities = positionEndpoint.getData("Berlin");
 		Assert.assertEquals(cities.get(0).getName(), "Berlin");
 	}
 }
