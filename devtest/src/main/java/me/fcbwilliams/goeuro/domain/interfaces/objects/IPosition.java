@@ -1,6 +1,6 @@
 package me.fcbwilliams.goeuro.domain.interfaces.objects;
 
-public interface ICity {
+public interface IPosition {
 	int get_id();
 	String getName();
 	String getType();

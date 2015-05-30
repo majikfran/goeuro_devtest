@@ -8,7 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 
 import me.fcbwilliams.goeuro.domain.interfaces.objects.*;
 import me.fcbwilliams.goeuro.endpoints.goeuro.rest.PositionEndpoint;
-import me.fcbwilliams.goeuro.endpoints.interfaces.IEndpoint;
+import me.fcbwilliams.goeuro.endpoints.interfaces.IRestEndpoint;
 
 
 @Configuration
@@ -23,7 +23,7 @@ public class SpringConfiguration {
 	private String apiVersionPath;
 	
 	@Bean
-	public IEndpoint<ICity> cityRepository()
+	public IRestEndpoint<IPosition> cityRepository()
 	{
 		return new PositionEndpoint(apiBasePath, apiVersionPath);
 	}

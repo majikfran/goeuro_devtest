@@ -3,8 +3,8 @@ package me.fcbwilliams.goeuro.repositories.goeuro.rest;
 import java.util.List;
 
 import me.fcbwilliams.goeuro.devtest.Spring.TestSpringConfiguration;
-import me.fcbwilliams.goeuro.domain.interfaces.objects.ICity;
-import me.fcbwilliams.goeuro.endpoints.interfaces.IEndpoint;
+import me.fcbwilliams.goeuro.domain.interfaces.objects.IPosition;
+import me.fcbwilliams.goeuro.endpoints.interfaces.IRestEndpoint;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -18,12 +18,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class CityRepositoryTest {
 	
 	@Autowired
-	IEndpoint<ICity> cityRepository;
+	IRestEndpoint<IPosition> cityRepository;
 	
 	@Test
 	public void getByNameTest()
 	{
-		List<? extends ICity> cities = cityRepository.getSuggestions("Berlin");
+		List<? extends IPosition> cities = cityRepository.getSuggestions("Berlin");
 		Assert.assertEquals(cities.get(0).getName(), "Berlin");
 	}
 }

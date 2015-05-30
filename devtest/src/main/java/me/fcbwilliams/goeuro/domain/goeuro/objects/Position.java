@@ -1,11 +1,11 @@
 package me.fcbwilliams.goeuro.domain.goeuro.objects;
 
-import me.fcbwilliams.goeuro.domain.interfaces.objects.ICity;
+import me.fcbwilliams.goeuro.domain.interfaces.objects.IPosition;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties
-public class City implements ICity {
+public class Position implements IPosition {
 	
 	private int _id;
 	private String name;

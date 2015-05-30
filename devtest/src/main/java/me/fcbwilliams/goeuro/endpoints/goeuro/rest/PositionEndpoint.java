@@ -15,10 +15,10 @@ import org.springframework.web.client.RestTemplate;
 
 import me.fcbwilliams.goeuro.domain.goeuro.objects.City;
 import me.fcbwilliams.goeuro.domain.interfaces.objects.ICity;
-import me.fcbwilliams.goeuro.endpoints.interfaces.IEndpoint;
+import me.fcbwilliams.goeuro.endpoints.interfaces.IRestEndpoint;
 
 @Component
-public class PositionEndpoint implements IEndpoint<ICity>{
+public class PositionEndpoint implements IRestEndpoint<ICity>{
 
 	RestTemplate restTemplate = new RestTemplate();
 	
@@ -30,15 +30,10 @@ public class PositionEndpoint implements IEndpoint<ICity>{
 		this.apiBasePath = apiBasePath;
 		this.apiVersionPath = apiVersionPath;
 	}
-	
-	public ICity getById(int id) {
-		throw new UnsupportedOperationException();
-	}
 
-	@Override
-	public List<? extends ICity> getSuggestions(String name) {
+	public List<? extends ICity> getData(String parameter) {
 		ParameterizedTypeReference<List<City>> responseType = new ParameterizedTypeReference<List<City>>(){};
-		ResponseEntity<List<City>> cities = restTemplate.exchange(apiBasePath + apiVersionPath + "position/suggest/en/" + name, HttpMethod.GET, null, responseType);
+		ResponseEntity<List<City>> cities = restTemplate.exchange(apiBasePath + apiVersionPath + "position/suggest/en/" + parameter, HttpMethod.GET, null, responseType);
 		return cities.getBody();
 	}
 }
