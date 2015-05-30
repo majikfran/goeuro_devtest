@@ -23,7 +23,30 @@ public class PositionEndpointTest {
 	@Test
 	public void getDataTest()
 	{
-		List<? extends IPosition> cities = positionEndpoint.getData("Berlin");
-		Assert.assertEquals(cities.get(0).getName(), "Berlin");
+		List<? extends IPosition> locations = positionEndpoint.getData("Berlin");
+		Assert.assertEquals(locations.get(0).getName(), "Berlin");
+		Assert.assertEquals(locations.get(0).get_id(), 376217);
+		Assert.assertEquals(locations.get(0).getType(), "location");
+		Assert.assertEquals(locations.get(0).getLatitude(), 0, 52.52437);
+		Assert.assertEquals(locations.get(0).getLongitude(), 0, 13.41053);
+		
+		Assert.assertEquals(locations.get(1).getName(), "Berlingo");
+		Assert.assertEquals(locations.get(1).get_id(), 448103);
+		Assert.assertEquals(locations.get(1).getType(), "location");
+		Assert.assertEquals(locations.get(1).getLatitude(), 0, 45.50298);
+		Assert.assertEquals(locations.get(1).getLongitude(), 0, 10.04366);
+		
+		locations = positionEndpoint.getData("Potsdam");
+		Assert.assertEquals(locations.get(0).getName(), "Potsdam");
+		Assert.assertEquals(locations.get(0).get_id(), 377078);
+		Assert.assertEquals(locations.get(0).getType(), "location");
+		Assert.assertEquals(locations.get(0).getLatitude(), 0, 52.39886);
+		Assert.assertEquals(locations.get(0).getLongitude(), 0, 13.06566);
+		
+		Assert.assertEquals(locations.get(1).getName(), "Potsdam");
+		Assert.assertEquals(locations.get(1).get_id(), 410978);
+		Assert.assertEquals(locations.get(1).getType(), "location");
+		Assert.assertEquals(locations.get(1).getLatitude(), 0, 44.66978);
+		Assert.assertEquals(locations.get(1).getLongitude(), 0, -74.98131);
 	}
 }
