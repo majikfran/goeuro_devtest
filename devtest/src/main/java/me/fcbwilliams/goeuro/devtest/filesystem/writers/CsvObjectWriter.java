@@ -27,7 +27,7 @@ public class CsvObjectWriter<T> implements IFileObjectWriter<T>{
 		
 		List<String> headers = new ArrayList<String>();
 		
-		for(Field f : ((Object) objects[0]).getClass().getDeclaredFields())
+		for(Field f : ((T) objects[0]).getClass().getDeclaredFields())
 		{
 			ModelInfo[] modelInfos = f.getAnnotationsByType(ModelInfo.class);
 			if(modelInfos.length != 0)
