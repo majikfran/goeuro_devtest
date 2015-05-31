@@ -1,10 +1,9 @@
 package me.fcbwilliams.goeuro.devtest.util.converters;
 
-import org.springframework.stereotype.Component;
-
 import me.fcbwilliams.goeuro.devtest.util.interfaces.IObjectConverter;
-import me.fcbwilliams.goeuro.domain.goeuro.objects.Position;
 import me.fcbwilliams.goeuro.domain.interfaces.objects.IPosition;
+
+import org.springframework.stereotype.Component;
 
 @Component
 public class PositionToStringArrayConverter implements IObjectConverter<IPosition, String[]> {
