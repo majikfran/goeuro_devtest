@@ -1,6 +1,5 @@
 package me.fcbwilliams.goeuro.domain.interfaces.objects;
 
-import me.fcbwilliams.goeuro.devtest.annotations.ModelInfo;
 
 public interface IPosition {
 	int get_id();
