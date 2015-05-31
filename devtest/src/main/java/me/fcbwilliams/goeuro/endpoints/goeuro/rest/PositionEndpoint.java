@@ -2,17 +2,15 @@ package me.fcbwilliams.goeuro.endpoints.goeuro.rest;
 
 import java.util.List;
 
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
-
 import me.fcbwilliams.goeuro.domain.goeuro.objects.Position;
 import me.fcbwilliams.goeuro.domain.interfaces.objects.IPosition;
 import me.fcbwilliams.goeuro.endpoints.interfaces.IRestEndpoint;
 
-@Component
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
+
 public class PositionEndpoint implements IRestEndpoint<IPosition>{
 
 	RestTemplate restTemplate = new RestTemplate();
