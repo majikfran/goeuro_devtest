@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 import me.fcbwilliams.goeuro.devtest.Spring.TestSpringConfiguration;
@@ -29,7 +30,7 @@ public class CsvObjectWriterTest {
 	public void writeDataTest()
 	{
 		String path = "testFile.csv";
-		IPosition[] objects = new IPosition[2];
+		List<IPosition> objects = new ArrayList<IPosition>();
 		
 		Position p1 = new Position();
 		p1.set_id(1);
@@ -45,8 +46,8 @@ public class CsvObjectWriterTest {
 		p2.setLatitude(2.1);
 		p2.setLongitude(2.2);
 		
-		objects[0] = p1;
-		objects[1] = p2;
+		objects.add(p1);
+		objects.add(p2);
 		
 		try {
 			csvObjectWriter.writeData(objects, path);
