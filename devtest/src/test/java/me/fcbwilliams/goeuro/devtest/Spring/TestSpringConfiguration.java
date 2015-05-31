@@ -4,6 +4,10 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.fcbwilliams.goeuro.devtest.filesystem.interfaces.IFileObjectWriter;
+import me.fcbwilliams.goeuro.devtest.filesystem.writers.CsvObjectWriter;
+import me.fcbwilliams.goeuro.devtest.util.converters.PositionToStringArrayConverter;
+import me.fcbwilliams.goeuro.devtest.util.interfaces.IObjectConverter;
 import me.fcbwilliams.goeuro.domain.interfaces.objects.IPosition;
 import me.fcbwilliams.goeuro.endpoints.goeuro.rest.PositionEndpoint;
 import me.fcbwilliams.goeuro.endpoints.interfaces.IRestEndpoint;
@@ -30,6 +34,18 @@ public class TestSpringConfiguration {
 	public IRestEndpoint<IPosition> positionEndpoint()
 	{
 		return new PositionEndpoint(apiBasePath, apiVersionPath);
+	}
+	
+	@Bean 
+	public IFileObjectWriter<IPosition> csvObjectWriter()
+	{
+		return new CsvObjectWriter<IPosition>();
+	}
+	
+	@Bean 
+	public IObjectConverter<IPosition, String[]> tToStringArrayConverter()
+	{
+		return new PositionToStringArrayConverter();
 	}
 	
 	@Bean
