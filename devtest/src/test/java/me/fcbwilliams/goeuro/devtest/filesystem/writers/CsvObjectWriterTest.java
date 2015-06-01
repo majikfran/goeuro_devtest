@@ -33,7 +33,6 @@ public class CsvObjectWriterTest {
 		String path = "testFile.csv";
 		List<ILocation> objects = new ArrayList<ILocation>();
 		
-		
 		Location p1 = new Location();
 		GeographicPosition g1 = new GeographicPosition();
 		g1.setLatitude(1.1);
