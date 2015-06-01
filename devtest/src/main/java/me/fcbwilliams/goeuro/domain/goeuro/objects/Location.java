@@ -17,8 +17,8 @@ public class Location implements ILocation {
 	private String name;
 	@ModelInfo(name = "type")
 	private String type;
-
-	private IGeographicPosition geographicPosition = new GeographicPosition();
+	@JsonProperty("geo_position")
+	private GeographicPosition geographicPosition = new GeographicPosition();
 	
 	@Override
 	@JsonProperty("_id")
@@ -73,12 +73,12 @@ public class Location implements ILocation {
 
 	@Override
 	@JsonProperty("geo_position")
-	public IGeographicPosition getGeographicPosition() {
+	public GeographicPosition getGeographicPosition() {
 		return geographicPosition;
 	}
 	
 	@JsonProperty("geo_position")
-	public void setGeographicPosition(IGeographicPosition geographicPosition)
+	public void setGeographicPosition(GeographicPosition geographicPosition)
 	{
 		this.geographicPosition = geographicPosition;
 	}

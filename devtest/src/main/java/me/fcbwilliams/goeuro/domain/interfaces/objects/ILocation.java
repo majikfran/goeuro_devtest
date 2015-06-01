@@ -1,5 +1,7 @@
 package me.fcbwilliams.goeuro.domain.interfaces.objects;
 
+import me.fcbwilliams.goeuro.domain.goeuro.objects.GeographicPosition;
+
 
 public interface ILocation {
 	int get_id();
@@ -7,5 +9,5 @@ public interface ILocation {
 	String getType();
 	double getLatitude();
 	double getLongitude();
-	IGeographicPosition getGeographicPosition();
+	GeographicPosition getGeographicPosition();
 }
