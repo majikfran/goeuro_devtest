@@ -30,6 +30,11 @@ public class TestSpringConfiguration {
 	@Value("${goeuro.apiVersionPath}")
 	private String apiVersionPath;
 	
+	@Value("${goeuro.headers}")
+	private String headers;
+
+	private String outputPath = "testFile.csv";
+	
 	@Bean
 	public IRestEndpoint<ILocation> positionEndpoint()
 	{
@@ -39,7 +44,8 @@ public class TestSpringConfiguration {
 	@Bean 
 	public IFileObjectWriter<ILocation> csvObjectWriter()
 	{
-		return new CsvObjectWriter<ILocation>();
+		String[] outputHeaders = headers.split(",");
+		return new CsvObjectWriter<ILocation>(outputHeaders, outputPath);
 	}
 	
 	@Bean 

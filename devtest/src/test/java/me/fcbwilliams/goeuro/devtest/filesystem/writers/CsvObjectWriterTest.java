@@ -55,7 +55,7 @@ public class CsvObjectWriterTest {
 		objects.add(p2);
 		
 		try {
-			csvObjectWriter.writeData(objects, path);
+			csvObjectWriter.writeData(objects);
 			List<String> lines = Files.readAllLines(Paths.get(path), Charset.forName("UTF-8"));
 			Assert.assertEquals("_id,name,type,latitude,longitude",lines.get(0));
 		} catch (IOException e) {
