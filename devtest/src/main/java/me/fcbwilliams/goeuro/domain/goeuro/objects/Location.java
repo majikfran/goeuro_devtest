@@ -1,7 +1,5 @@
 package me.fcbwilliams.goeuro.domain.goeuro.objects;
 
-import me.fcbwilliams.goeuro.devtest.annotations.ModelInfo;
-import me.fcbwilliams.goeuro.domain.interfaces.objects.IGeographicPosition;
 import me.fcbwilliams.goeuro.domain.interfaces.objects.ILocation;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
@@ -11,11 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties
 public class Location implements ILocation {
 	
-	@ModelInfo(name = "_id")
 	private int _id;
-	@ModelInfo(name = "name")
 	private String name;
-	@ModelInfo(name = "type")
 	private String type;
 	@JsonProperty("geo_position")
 	private GeographicPosition geographicPosition = new GeographicPosition();
