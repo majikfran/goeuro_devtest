@@ -38,6 +38,9 @@ public class SpringConfiguration {
 	@Value("${goeuro.apiVersionPath}")
 	private String apiVersionPath;
 	
+	@Value("${goeuro.headers}")
+	private String headers;
+	
 	@Value("${goeuro.outputPath}")
 	private String outputPath;
 	
@@ -50,7 +53,8 @@ public class SpringConfiguration {
 	@Bean 
 	public IFileObjectWriter<ILocation> csvObjectWriter()
 	{
-		return new CsvObjectWriter<ILocation>(outputPath);
+		String[] outputHeaders = headers.split(",");
+		return new CsvObjectWriter<ILocation>(outputHeaders, outputPath);
 	}
 	
 	@Bean 

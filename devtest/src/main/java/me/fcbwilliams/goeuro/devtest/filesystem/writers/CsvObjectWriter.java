@@ -28,6 +28,7 @@ public class CsvObjectWriter<T> implements IFileObjectWriter<T>{
 	@Override
 	public void writeData(List<? extends T> objects) throws IOException {
 		CSVWriter csvWriter = new CSVWriter(new FileWriter(outputPath, false), CSVWriter.DEFAULT_SEPARATOR);
+		csvWriter.writeNext(headers, false);
 		
 		List<String[]> toWrite = new ArrayList<String[]>();
 	
@@ -38,15 +39,6 @@ public class CsvObjectWriter<T> implements IFileObjectWriter<T>{
 		}
 		
 		csvWriter.writeAll(toWrite, false);
-		
-		csvWriter.close();
-	}
-
-	@Override
-	public void writeHeaders() throws IOException {
-		CSVWriter csvWriter = new CSVWriter(new FileWriter(outputPath, false), CSVWriter.DEFAULT_SEPARATOR);
-				
-		csvWriter.writeNext(headers, false);
 		
 		csvWriter.close();
 	}
