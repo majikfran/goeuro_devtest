@@ -16,9 +16,12 @@ public class CsvObjectWriter<T> implements IFileObjectWriter<T>{
 
 	@Autowired
 	IObjectConverter<T, String[]> tToStringArrayConverter;
+	
+	private String[] headers;
 	private String outputPath;
 	
-	public CsvObjectWriter(String outputPath) {
+	public CsvObjectWriter(String[] headers, String outputPath) {
+		this.headers = headers;
 		this.outputPath = outputPath;
 	}
 	
@@ -40,7 +43,7 @@ public class CsvObjectWriter<T> implements IFileObjectWriter<T>{
 	}
 
 	@Override
-	public void writeHeader(String[] headers) throws IOException {
+	public void writeHeaders() throws IOException {
 		CSVWriter csvWriter = new CSVWriter(new FileWriter(outputPath, false), CSVWriter.DEFAULT_SEPARATOR);
 				
 		csvWriter.writeNext(headers, false);
