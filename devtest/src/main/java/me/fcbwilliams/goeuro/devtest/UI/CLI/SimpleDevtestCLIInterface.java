@@ -32,7 +32,7 @@ public class SimpleDevtestCLIInterface implements IUserInterface {
 		
 		List<? extends ILocation> positions = (List<? extends ILocation>)endpoint.getData(parameter);
 		try {
-			writer.writeData(positions, outputPath);
+			writer.writeData(positions);
 		} catch (IOException e) {
 			System.out.print(
 				"Unable to write to specified path. The\n" +

@@ -4,6 +4,6 @@ import java.io.IOException;
 import java.util.List;
 
 public interface IFileObjectWriter<T> {
-	void writeData(List<? extends T> objects, String path) throws IOException;
-	void writeHeader(String[] headers);
+	void writeData(List<? extends T> objects) throws IOException;
+	void writeHeader(String[] headers) throws IOException;
 }

@@ -50,7 +50,7 @@ public class SpringConfiguration {
 	@Bean 
 	public IFileObjectWriter<ILocation> csvObjectWriter()
 	{
-		return new CsvObjectWriter<ILocation>();
+		return new CsvObjectWriter<ILocation>(outputPath);
 	}
 	
 	@Bean 
