@@ -9,6 +9,7 @@ import java.util.List;
 
 import me.fcbwilliams.goeuro.devtest.Spring.TestSpringConfiguration;
 import me.fcbwilliams.goeuro.devtest.filesystem.interfaces.IFileObjectWriter;
+import me.fcbwilliams.goeuro.domain.goeuro.objects.GeographicPosition;
 import me.fcbwilliams.goeuro.domain.goeuro.objects.Location;
 import me.fcbwilliams.goeuro.domain.interfaces.objects.ILocation;
 
@@ -32,19 +33,24 @@ public class CsvObjectWriterTest {
 		String path = "testFile.csv";
 		List<ILocation> objects = new ArrayList<ILocation>();
 		
+		
 		Location p1 = new Location();
+		GeographicPosition g1 = new GeographicPosition();
+		g1.setLatitude(1.1);
+		g1.setLongitude(1.2);
 		p1.set_id(1);
 		p1.setName("test1");
 		p1.setType("location");
-		p1.setLatitude(1.1);
-		p1.setLongitude(1.2);
+		p1.setGeographicPosition(g1);
 		
 		Location p2 = new Location();
+		GeographicPosition g2 = new GeographicPosition();
+		g2.setLatitude(2.1);
+		g2.setLongitude(2.2);
 		p2.set_id(2);
 		p2.setName("test2");
 		p2.setType("airport");
-		p2.setLatitude(2.1);
-		p2.setLongitude(2.2);
+		p2.setGeographicPosition(g2);
 		
 		objects.add(p1);
 		objects.add(p2);
