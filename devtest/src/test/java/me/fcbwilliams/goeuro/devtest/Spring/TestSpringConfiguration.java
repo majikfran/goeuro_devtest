@@ -8,7 +8,7 @@ import me.fcbwilliams.goeuro.devtest.filesystem.interfaces.IFileObjectWriter;
 import me.fcbwilliams.goeuro.devtest.filesystem.writers.CsvObjectWriter;
 import me.fcbwilliams.goeuro.devtest.util.converters.PositionToStringArrayConverter;
 import me.fcbwilliams.goeuro.devtest.util.interfaces.IObjectConverter;
-import me.fcbwilliams.goeuro.domain.interfaces.objects.IPosition;
+import me.fcbwilliams.goeuro.domain.interfaces.objects.ILocation;
 import me.fcbwilliams.goeuro.endpoints.goeuro.rest.PositionEndpoint;
 import me.fcbwilliams.goeuro.endpoints.interfaces.IRestEndpoint;
 
@@ -31,19 +31,19 @@ public class TestSpringConfiguration {
 	private String apiVersionPath;
 	
 	@Bean
-	public IRestEndpoint<IPosition> positionEndpoint()
+	public IRestEndpoint<ILocation> positionEndpoint()
 	{
 		return new PositionEndpoint(apiBasePath, apiVersionPath);
 	}
 	
 	@Bean 
-	public IFileObjectWriter<IPosition> csvObjectWriter()
+	public IFileObjectWriter<ILocation> csvObjectWriter()
 	{
-		return new CsvObjectWriter<IPosition>();
+		return new CsvObjectWriter<ILocation>();
 	}
 	
 	@Bean 
-	public IObjectConverter<IPosition, String[]> tToStringArrayConverter()
+	public IObjectConverter<ILocation, String[]> tToStringArrayConverter()
 	{
 		return new PositionToStringArrayConverter();
 	}

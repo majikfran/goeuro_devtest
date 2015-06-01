@@ -9,8 +9,8 @@ import java.util.List;
 
 import me.fcbwilliams.goeuro.devtest.Spring.TestSpringConfiguration;
 import me.fcbwilliams.goeuro.devtest.filesystem.interfaces.IFileObjectWriter;
-import me.fcbwilliams.goeuro.domain.goeuro.objects.Position;
-import me.fcbwilliams.goeuro.domain.interfaces.objects.IPosition;
+import me.fcbwilliams.goeuro.domain.goeuro.objects.Location;
+import me.fcbwilliams.goeuro.domain.interfaces.objects.ILocation;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -24,22 +24,22 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class CsvObjectWriterTest {
 
 	@Autowired
-	IFileObjectWriter<IPosition> csvObjectWriter;
+	IFileObjectWriter<ILocation> csvObjectWriter;
 	
 	@Test
 	public void writeDataTest()
 	{
 		String path = "testFile.csv";
-		List<IPosition> objects = new ArrayList<IPosition>();
+		List<ILocation> objects = new ArrayList<ILocation>();
 		
-		Position p1 = new Position();
+		Location p1 = new Location();
 		p1.set_id(1);
 		p1.setName("test1");
 		p1.setType("location");
 		p1.setLatitude(1.1);
 		p1.setLongitude(1.2);
 		
-		Position p2 = new Position();
+		Location p2 = new Location();
 		p2.set_id(2);
 		p2.setName("test2");
 		p2.setType("airport");

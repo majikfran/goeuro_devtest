@@ -5,7 +5,7 @@ import java.util.List;
 
 import me.fcbwilliams.goeuro.devtest.UI.interfaces.IUserInterface;
 import me.fcbwilliams.goeuro.devtest.filesystem.interfaces.IFileObjectWriter;
-import me.fcbwilliams.goeuro.domain.interfaces.objects.IPosition;
+import me.fcbwilliams.goeuro.domain.interfaces.objects.ILocation;
 import me.fcbwilliams.goeuro.endpoints.interfaces.IRestEndpoint;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class SimpleDevtestCLIInterface implements IUserInterface {
 
 	@Autowired
-	IRestEndpoint<IPosition> endpoint;
+	IRestEndpoint<ILocation> endpoint;
 	@Autowired
-	IFileObjectWriter<IPosition> writer;
+	IFileObjectWriter<ILocation> writer;
 	
 	private String parameter;
 	private String outputPath;
@@ -30,7 +30,7 @@ public class SimpleDevtestCLIInterface implements IUserInterface {
 		printHeader();
 		printGreeting();
 		
-		List<? extends IPosition> positions = (List<? extends IPosition>)endpoint.getData(parameter);
+		List<? extends ILocation> positions = (List<? extends ILocation>)endpoint.getData(parameter);
 		try {
 			writer.writeData(positions, outputPath);
 		} catch (IOException e) {

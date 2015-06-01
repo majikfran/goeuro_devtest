@@ -1,15 +1,15 @@
 package me.fcbwilliams.goeuro.devtest.util.converters;
 
 import me.fcbwilliams.goeuro.devtest.util.interfaces.IObjectConverter;
-import me.fcbwilliams.goeuro.domain.interfaces.objects.IPosition;
+import me.fcbwilliams.goeuro.domain.interfaces.objects.ILocation;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class PositionToStringArrayConverter implements IObjectConverter<IPosition, String[]> {
+public class PositionToStringArrayConverter implements IObjectConverter<ILocation, String[]> {
 
 	@Override
-	public String[] convert(IPosition object) {
+	public String[] convert(ILocation object) {
 		String[] strings = new String[5];
 		
 		strings[0] = String.valueOf(object.get_id());
