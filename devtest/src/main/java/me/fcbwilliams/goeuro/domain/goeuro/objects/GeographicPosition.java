@@ -7,6 +7,11 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties
+/**
+ * Concrete implementation of Geographic position interface
+ * 
+ * @author Francis
+ */
 public class GeographicPosition implements IGeographicPosition {
 
 	private double latitude;

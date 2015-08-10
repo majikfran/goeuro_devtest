@@ -6,6 +6,11 @@ import me.fcbwilliams.goeuro.domain.interfaces.objects.ILocation;
 import org.springframework.stereotype.Component;
 
 @Component
+/**
+ * Object converter implementation. Converts type "Position" to a String[]
+ * 
+ * @author Francis
+ */
 public class PositionToStringArrayConverter implements IObjectConverter<ILocation, String[]> {
 
 	@Override

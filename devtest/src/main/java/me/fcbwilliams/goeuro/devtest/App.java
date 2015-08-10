@@ -21,7 +21,7 @@ public class App
         ctx.getEnvironment().getPropertySources().addFirst(clps);
         ctx.register(SpringConfiguration.class);
         ctx.refresh();
-
+        
         ctx.getBean(IUserInterface.class).start();
         ctx.close();
     }

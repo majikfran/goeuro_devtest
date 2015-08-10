@@ -7,6 +7,11 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties
+/**
+ * Concrete implementaion of Location domain object
+ * 
+ * @author Francis
+ */
 public class Location implements ILocation {
 	
 	private int _id;

@@ -28,6 +28,11 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 @Configuration
 @ComponentScan("me.fcbwilliams.goeuro")
 @PropertySource("classpath:application.properties")
+/**
+ * Spring configuration. Constructs the injected Beans.
+ * 
+ * @author Francis
+ */
 public class SpringConfiguration {
 	@Autowired 
 	Environment env;
@@ -43,6 +48,15 @@ public class SpringConfiguration {
 	
 	@Value("${goeuro.outputPath}")
 	private String outputPath;
+	
+	@Value("${goeuro.applicationHeaderPath}")
+	private String headerPath;
+	
+	@Value("${goeuro.greeting}")
+	private String greeting;
+	
+	@Value("${goeuro.farewell}")
+	private String farewell;
 	
 	@Bean
 	public IRestEndpoint<ILocation> positionEndpoint()
@@ -78,7 +92,7 @@ public class SpringConfiguration {
 	public IUserInterface ui()
 	{
 		String[] nonOptionArgs = env.getProperty("nonOptionArgs", String[].class);
-		return new SimpleDevtestCLIInterface(nonOptionArgs[0], outputPath);
+		return new SimpleDevtestCLIInterface(nonOptionArgs[0], headerPath, greeting, farewell);
 	}
 	
 	@Bean
